@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+
+$darkgray: hsl(0, 0%, 63%);
+$vdarkgray: hsl(0, 0%, 27%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+// .wrapper {
+//   overflow: hidden;
+// }
+
+body {
+  font-family: League Spartan;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  top: -4px;
+}
+
+.primary {
+  position: relative;
+  top: 4px;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  display: flex;
+  &__list {
+    display: flex;
+    margin-left: 30px;
+  }
+  &__item {
+    margin-right: 20px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+
+    // padding-bottom: 5px;
+    &:hover {
+      border-bottom: 2px solid white;
+    }
+  }
+}
+
+.info {
+  position: relative;
+  margin: 120px;
+  &__title {
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  &__text {
+    color: $darkgray;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+.purchase {
+  display: flex;
+  color: black;
+  width: max-content;
+  cursor: pointer;
+  &:hover {
+    filter: invert(60%);
+  }
+  &__link {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 15px;
+  }
+  &__icon {
+    background-image: url("../images/icon-arrow.svg");
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 60px;
+    margin-left: 10px;
+  }
+}
+
+.changer {
+  display: flex;
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  &__left-icon {
+    background-image: url("../images/icon-angle-left.svg");
+  }
+  &__right-icon {
+    background-image: url("../images/icon-angle-right.svg");
+  }
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18%;
+  cursor: pointer;
+  &:hover {
+    background-color: $vdarkgray;
+  }
+}
+
+.about {
+  position: relative;
+  top: -4px;
+  display: flex;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 35px;
+  &__title {
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+  }
+  &__text {
+    color: $darkgray;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+  }
+
+  .primary {
+    position: relative;
+  }
+
+  .info {
+    margin: 50px 30px 70px 30px;
+    &__title {
+      font-size: 2rem;
+    }
+    &__text {
+      margin: 15px 0 30px 0;
+    }
+  }
+  .changer {
+    position: absolute;
+    top: -100px;
+    left: 245px;
+    &__left-icon {
+      margin-left: -1px;
+    }
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .article {
+    margin: 50px 30px 30px 30px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__list {
+      display: none;
+    }
+    &__hamburger {
+      position: absolute;
+      left: 20px;
+    }
+    &--mobile {
+      background-color: rgba($color: #fff, $alpha: 2.4);
+    }
+
+    &__list--mobile {
+      display: flex;
+      color: black;
+    }
+    &__item--mobile {
+      font-weight: 600;
+      color: black;
+      margin-right: 0;
+      margin-left: 20px;
+    }
+  }
+}
